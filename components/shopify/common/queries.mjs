@@ -123,6 +123,10 @@ const LIST_PRODUCTS = `
       nodes {
         id
         title
+        priceRangeV2 {
+          minVariantPrice { amount currencyCode }
+          maxVariantPrice { amount currencyCode }
+        }
         category {
           id
         }
@@ -302,10 +306,12 @@ const GET_PRODUCT = `
     product (id: $id) {
       id
       title
+
       priceRangeV2 {
         minVariantPrice { amount currencyCode }
         maxVariantPrice { amount currencyCode }
       }
+
       media (first: $first, after: $after) {
         nodes {
           id

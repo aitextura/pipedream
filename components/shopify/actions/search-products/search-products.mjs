@@ -4,9 +4,9 @@ import utils from "../../common/utils.mjs";
 
 export default {
   key: "shopify-search-products",
-  name: "Search for Products",
+  name: "Search for Products !!!",
   description: "Search for products. [See the documentation](https://shopify.dev/docs/api/admin-graphql/latest/queries/products)",
-  version: "0.0.16",
+  version: "0.0.17",
   annotations: {
     destructiveHint: false,
     openWorldHint: true,
