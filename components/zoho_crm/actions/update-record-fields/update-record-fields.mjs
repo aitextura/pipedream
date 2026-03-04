@@ -4,7 +4,12 @@ export default {
   key: "zoho_crm-update-record-fields",
   name: "Update Record Fields",
   description: "Updates any fields of an existing record in a Zoho CRM module. Pass fields as a JSON object string. [See the documentation](https://www.zoho.com/crm/developer/docs/api/v2/update-records.html)",
-  version: "0.0.1",
+  version: "0.0.2",
+  annotations: {
+    destructiveHint: true,
+    openWorldHint: true,
+    readOnlyHint: false,
+  },
   type: "action",
   props: {
     zohoCrm,
