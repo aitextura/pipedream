@@ -196,6 +196,9 @@ export default {
     listFulfillmentOrders(variables) {
       return this._makeGraphQlRequest(queries.LIST_FULFILLMENT_ORDERS, variables);
     },
+    listProducts(variables) {
+      return this._makeGraphQlRequest(queries.LIST_PRODUCTS, variables);
+    },
     createOrder(variables) {
       return this._makeGraphQlRequest(mutations.CREATE_ORDER, variables);
     },

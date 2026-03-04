@@ -804,6 +804,63 @@ const LIST_FULFILLMENT_ORDERS = `
   }
 `;
 
+const LIST_PRODUCTS = `
+  query ($first: Int, $after: String, $reverse: Boolean, $sortKey: ProductSortKeys, $query: String) {
+    products (first: $first, after: $after, reverse: $reverse, sortKey: $sortKey, query: $query) {
+      nodes {
+        id
+        title
+        priceRangeV2 {
+          minVariantPrice { amount currencyCode }
+          maxVariantPrice { amount currencyCode }
+        }
+        category {
+          id
+        }
+        collections (first: $first) {
+          nodes {
+            id
+            title
+          }
+        }
+        createdAt
+        description
+        handle
+        metafields (first: $first) {
+          nodes {
+            id
+            key
+            namespace
+            value
+            type
+          }
+        }
+        onlineStoreUrl
+        productType
+        publishedAt
+        status
+        tags
+        totalInventory
+        updatedAt
+        variants (first: $first) {
+          nodes {
+            id
+            title
+          }
+        }
+        vendor
+        options (first: $first) {
+          id
+          name
+        }
+      } 
+      pageInfo {
+        endCursor
+      }
+    }
+  }
+`;
+
 export default {
   GET_ORDER,
   GET_CUSTOMER,
@@ -813,4 +870,5 @@ export default {
   LIST_DRAFT_ORDERS,
   LIST_CUSTOMERS,
   LIST_FULFILLMENT_ORDERS,
+  LIST_PRODUCTS,
 };
